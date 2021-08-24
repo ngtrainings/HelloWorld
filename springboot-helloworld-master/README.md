@@ -2,27 +2,12 @@
 
 A spring boot enabled hello world application
 
+- Executing as maven build with embedded tomcat application server
 
-- Jenkins CI build and test
-- Continuous deployment to Heroku on success
 
-## Usage
-
-- Directly using maven
-```
-mvn spring-boot:run
-```
-
-- From within your IDE right click run 
-```
-Application.java
-```
-
-- From executable jar file
-```
-mvn clean install
+mvn clean package
 java -jar target/helloworld-0.0.1-SNAPSHOT.jar
-```
+
 
 - To run this as a docker application (assumption docker is installed on your machine)
 ```

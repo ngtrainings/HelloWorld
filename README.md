@@ -3,13 +3,6 @@
 
 A spring boot enabled hello world application
 
-[![Build Status]( update url)
-
-[![Coverage Status](update url)
-
-- Jenkins CI build and test
-- Continuous deployment to Heroku on success
-
 ## Usage
 
 - Directly using maven
@@ -30,8 +23,8 @@ java -jar target/helloworld-0.0.1-SNAPSHOT.jar
 
 - To run this as a docker application (assumption docker is installed on your machine)
 ```
-docker pull springboot-helloworld
-docker container run -p 8080:8080 -d springboot-helloworld
+git clone https://github.com/ngtrainings/HelloWorld.git
+docker run -p 80:2020 -d springboot-helloworld
 
 Go to Browser and type http://localhost:8080/ or do curl http://localhost:8080/ on command prompt
 ```

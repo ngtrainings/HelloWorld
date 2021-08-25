@@ -14,10 +14,12 @@ open WebPreview at portno: 8080
 
 - To run this as a docker application (assumption docker is installed on your machine)
 ```
-docker pull gazgeek/springboot-helloworld
-docker container run -p 8080:8080 -d gazgeek/springboot-helloworld
-
-Go to Browser and type http://localhost:8080/ or do curl http://localhost:8080/ on command prompt
+git clone https://github.com/ngtrainings/HelloWorld/
+cd HelloWorld/springboot-helloworld-master/
+docker build -t helloworld .
+docker images
+docker run -p80:2020 helloworld
+open WebPreview at portno: 80
 ```
 
 

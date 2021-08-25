@@ -2,28 +2,22 @@
 
 A spring boot enabled hello world application
 
-## Usage
-
-- Directly using maven
+- Executing as maven build with embedded tomcat application server
 ```
-mvn spring-boot:run
-```
-
-- From within your IDE right click run 
-```
-Application.java
-```
-
-- From executable jar file
-```
-mvn clean install
+open maven sand box environmnet in Orelly, and follow below steps
+git clone https://github.com/ngtrainings/HelloWorld/
+cd /HelloWorld/springboot-helloworld-master
+mvn clean package
 java -jar target/helloworld-0.0.1-SNAPSHOT.jar
+open WebPreview at portno: 8080
 ```
 
 - To run this as a docker application (assumption docker is installed on your machine)
 ```
-git clone https://github.com/ngtrainings/HelloWorld.git
-docker run -p 80:2020 -d springboot-helloworld
-
-Use katakoda view client link using 80 port
+git clone https://github.com/ngtrainings/HelloWorld/
+cd HelloWorld/springboot-helloworld-master/
+docker build -t helloworld .
+docker images
+docker run -p80:2020 helloworld
+open WebPreview at portno: 80
 ```

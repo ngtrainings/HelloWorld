@@ -25,5 +25,5 @@ java -jar target/helloworld-0.0.1-SNAPSHOT.jar
 git clone https://github.com/ngtrainings/HelloWorld.git
 docker run -p 80:2020 -d springboot-helloworld
 
-Go to Browser and type http://localhost:8080/ or do curl http://localhost:8080/ on command prompt
+Use katakoda view client link using 80 port
 ```

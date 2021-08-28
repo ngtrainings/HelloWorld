@@ -26,7 +26,14 @@ open WebPreview at portno: 80
 ```
 git clone https://github.com/ngtrainings/HelloWorld/
 cd HelloWorld/springboot-helloworld-master/
-update Dockerfile ( base image from openjdk to FROM store/oracle/serverjre:1.8.0_241-b07 )
+create Dockerfile with below content
+
+FROM store/oracle/serverjre:1.8.0_241-b07
+COPY . /data/springboot-helloworld
+WORKDIR /data/springboot-helloworld
+EXPOSE 2020
+CMD ["java", "-jar", "helloworld-0.0.1-SNAPSHOT.jar"]
+
 login with docker id
 docker build -t helloworld .
 docker images

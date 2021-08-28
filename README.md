@@ -21,3 +21,16 @@ docker images
 docker run -p80:2020 helloworld
 open WebPreview at portno: 80
 ```
+
+- To run this as a docker application with oracle jdk 
+```
+git clone https://github.com/ngtrainings/HelloWorld/
+cd HelloWorld/springboot-helloworld-master/
+update Dockerfile ( base image from openjdk to FROM store/oracle/serverjre:1.8.0_241-b07 )
+login with docker id
+docker build -t helloworld .
+docker images
+docker run -p80:2020 helloworld
+open WebPreview at portno: 80
+```
+

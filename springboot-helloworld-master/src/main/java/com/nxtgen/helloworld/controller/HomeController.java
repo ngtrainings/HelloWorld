@@ -8,7 +8,7 @@ public class HomeController {
 
     @RequestMapping("/")
     String home() {
-        return "Hello from NxtGen!";
+        return "Hello from NxtGen! --> V2";
     }
 
 }

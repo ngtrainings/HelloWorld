@@ -22,15 +22,15 @@ pipeline {
                 sh "docker build -f springboot-helloworld-master/Dockerfile-Spring -t ngtrainings/springboot-helloworld-master:v2"
             }
         }
-	      stage('Docker Images push to Registory') {
+	stage('Docker Images push to Registory') {
             steps {
-		            sh "docker login -u ngtrainings -p trainings2021"
+		sh "docker login -u ngtrainings -p trainings2021"
                 sh "docker push ngtrainings/springboot-helloworld-master:v2"
             }
         }
-	      stage('Deploy docker Images in k8s') {
+	stage('Deploy docker Images in k8s') {
             steps {
-		            sh "kubectl apply -f helloworld.yaml"
+		sh "kubectl apply -f helloworld.yaml"
             }
         }
     }

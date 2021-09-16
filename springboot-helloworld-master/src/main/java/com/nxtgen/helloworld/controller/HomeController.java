@@ -20,7 +20,7 @@ public class HomeController {
             // Remote address
             String rip = InetAddress.getLoopbackAddress().getHostAddress();
             String rhost = InetAddress.getLoopbackAddress().getHostName();
-            System.out.printf("Instance details :- %s:%d", ip, port);
+            System.out.println("Hello from NextGen! --> V3. Local Server ip --> "+ip+ " Local Server Name --> "+host+" Remote Server ip --> "+rip+ " Remote Server Name --> "+rhost);
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }

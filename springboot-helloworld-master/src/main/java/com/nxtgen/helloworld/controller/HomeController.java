@@ -11,6 +11,7 @@ public class HomeController {
 
     @RequestMapping("/")
     String home() {
+        String message =  "";
         
         try {
             // Local address
@@ -20,12 +21,16 @@ public class HomeController {
             // Remote address
             String rip = InetAddress.getLoopbackAddress().getHostAddress();
             String rhost = InetAddress.getLoopbackAddress().getHostName();
-            System.out.println("Hello from NextGen! --> V3. Local Server ip --> "+ip+ " Local Server Name --> "+host+" Remote Server ip --> "+rip+ " Remote Server Name --> "+rhost);
+            
+            message = "Hello from NextGen! --> V3. Local Server ip --> "+ip+ " Local Server Name --> "+host+" Remote Server ip --> "+rip+ " Remote Server Name --> "+rhost;
+            
+            System.out.println(message);
+            
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
         
-        return "Hello from NextGen! --> V3. Local Server ip --> "+ip+ " Local Server Name --> "+host+" Remote Server ip --> "+rip+ " Remote Server Name --> "+rhost;
+        return message;
     }
 
 }

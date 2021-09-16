@@ -11,15 +11,18 @@ public class HomeController {
 
     @RequestMapping("/")
     String home() {
-        
+        String ip="";
+        String host="";
+        String rip ="";
+        String rhost="";
         try {
             // Local address
-            String ip = InetAddress.getLocalHost().getHostAddress();
-            String host = InetAddress.getLocalHost().getHostName();
+             ip = InetAddress.getLocalHost().getHostAddress();
+             host = InetAddress.getLocalHost().getHostName();
 
             // Remote address
-            String rip = InetAddress.getLoopbackAddress().getHostAddress();
-            String rhost = InetAddress.getLoopbackAddress().getHostName();
+             rip = InetAddress.getLoopbackAddress().getHostAddress();
+             rhost = InetAddress.getLoopbackAddress().getHostName();
             System.out.println("Hello from NextGen! --> V3. Local Server ip --> "+ip+ " Local Server Name --> "+host+" Remote Server ip --> "+rip+ " Remote Server Name --> "+rhost);
         } catch (UnknownHostException e) {
             e.printStackTrace();

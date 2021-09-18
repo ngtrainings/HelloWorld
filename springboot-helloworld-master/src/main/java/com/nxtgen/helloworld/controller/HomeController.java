@@ -22,7 +22,7 @@ public class HomeController {
             String rip = InetAddress.getLoopbackAddress().getHostAddress();
             String rhost = InetAddress.getLoopbackAddress().getHostName();
             
-            message = "Hello from NextGen! --> V2. Local Server ip --> "+ip+ " Local Server Name --> "+host+" Remote Server ip --> "+rip+ " Remote Server Name --> "+rhost;
+            message = "Hello from NextGen! --> V4 --> Jenkins CI-CD. Local Server ip --> "+ip+ " Local Server Name --> "+host+" Remote Server ip --> "+rip+ " Remote Server Name --> "+rhost;
             
             System.out.println(message);
             

@@ -1,5 +1,7 @@
 FROM openjdk:8
 
+RUN pwd
+RUN ls -ltr
 COPY . /data/springboot-helloworld
 WORKDIR /data/springboot-helloworld
 

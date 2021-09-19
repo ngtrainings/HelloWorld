@@ -1,5 +1,6 @@
 FROM openjdk:8
 
+RUN mkdir /data/springboot-helloworld
 COPY springboot-helloworld-master/target/helloworld-0.0.1-SNAPSHOT.jar /data/springboot-helloworld
 WORKDIR /data/springboot-helloworld
 

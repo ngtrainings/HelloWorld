@@ -1,9 +1,7 @@
 FROM openjdk:8
 
-COPY springboot-helloworld-master/target/helloworld-0.0.1-SNAPSHOT.jar /data
-WORKDIR /data
-
-RUN ls -ltR /data
+RUN ls -ltR /
+COPY springboot-helloworld-master/target/*.jar ./
 
 EXPOSE 8080
 

@@ -15,14 +15,15 @@ public class HomeController {
         
         try {
             // Local address
-            String ip = InetAddress.getLocalHost().getHostAddress();
-            String host = InetAddress.getLocalHost().getHostName();
+            //String ip = InetAddress.getLocalHost().getHostAddress();
+            //String host = InetAddress.getLocalHost().getHostName();
 
             // Remote address
-            String rip = InetAddress.getLoopbackAddress().getHostAddress();
-            String rhost = InetAddress.getLoopbackAddress().getHostName();
+            //String rip = InetAddress.getLoopbackAddress().getHostAddress();
+            //String rhost = InetAddress.getLoopbackAddress().getHostName();
             
-            message = "Hello from NextGen! --> V6 --> ingress. Local Server ip --> "+ip+ " Local Server Name --> "+host+" Remote Server ip --> "+rip+ " Remote Server Name --> "+rhost;
+            //message = "Hello from NextGen! --> V6 --> ingress. Local Server ip --> "+ip+ " Local Server Name --> "+host+" Remote Server ip --> "+rip+ " Remote Server Name --> "+rhost;
+            message = "Hello from AWengerS! --> V7 ";
             
             System.out.println(message);
             

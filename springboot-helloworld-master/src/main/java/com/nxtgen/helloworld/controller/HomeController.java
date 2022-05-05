@@ -13,7 +13,7 @@ public class HomeController {
     String ingress() {
         String message =  "";
         
-        try {
+        //try {
             // Local address
             //String ip = InetAddress.getLocalHost().getHostAddress();
             //String host = InetAddress.getLocalHost().getHostName();
@@ -27,9 +27,9 @@ public class HomeController {
             
             System.out.println(message);
             
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
+        //} catch (UnknownHostException e) {
+          //  e.printStackTrace();
+        //}
         
         return message;
     }

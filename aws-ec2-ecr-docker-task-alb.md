@@ -33,15 +33,45 @@ git clone https://github.com/mydeveloperplanet/MyAWSPlanet.git
 mvn clean verify
 docker images
 
-#public ECR
-public.ecr.aws/z9l9d8r7/mydeveloperplanet/myawsplanet:latest
-
-# push image to ECR
+## Authenticate yourself to the AWS ECR public registry
 aws configure
-aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/z9l9d8r7
-docker build -t mydeveloperplanet/myawsplanet .
-docker tag mydeveloperplanet/myawsplanet:latest public.ecr.aws/z9l9d8r7/mydeveloperplanet/myawsplanet:latest
-docker push public.ecr.aws/z9l9d8r7/mydeveloperplanet/myawsplanet:latest
+
+aws ecr-public get-login-password \
+--region us-east-1 | docker login \
+--username AWS --password-stdin public.ecr.aws
+
+
+myimage="mydeveloperplanet/myawsplanet"
+
+
+## Create a public repository in ECR
+aws ecr-public create-repository \
+--repository-name $myimage \
+--region us-east-1
+--image-tag-mutability IMMUTABLE \
+--image-scanning-configuration scanOnPush=true
+
+
+## Get ECR repository url
+URL=$(aws ecr-public describe-repositories \
+--region us-east-1 | jq -r .repositories[].repositoryUri ) && echo $URL
+
+## returns public.ecr.aws/z9l9d8r7/mydeveloperplanet/myawsplanet:latest
+
+## TAG you docker image form ECR public repository
+docker build -t $myimage .
+docker tag $myimage:latest $URL
+
+## PUSH a docker image from a private ECR repository
+docker push $URL
+
+
+# Push image to ECR ( manual )
+#aws configure
+#aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/z9l9d8r7
+#docker build -t mydeveloperplanet/myawsplanet .
+#docker tag mydeveloperplanet/myawsplanet:latest public.ecr.aws/z9l9d8r7/mydeveloperplanet/myawsplanet:latest
+#docker push public.ecr.aws/z9l9d8r7/mydeveloperplanet/myawsplanet:latest
 
 
 ```

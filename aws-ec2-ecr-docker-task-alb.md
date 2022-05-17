@@ -26,8 +26,18 @@ sudo usermod -a -G docker $USER
 newgrp docker
 docker ps
 
+#Perform a quick update on your instance:
+sudo yum update -y
+ 
+#Install git in your EC2 instance
+sudo yum install git -y
+ 
+#Check git version
+git version
+
 # clone project
 git clone https://github.com/mydeveloperplanet/MyAWSPlanet.git
+cd MyAWSPlanet
 
 # build and create image
 mvn clean verify
@@ -40,7 +50,7 @@ aws ecr-public get-login-password \
 --region us-east-1 | docker login \
 --username AWS --password-stdin public.ecr.aws
 
-
+# my project
 myimage="mydeveloperplanet/myawsplanet"
 
 
@@ -48,9 +58,8 @@ myimage="mydeveloperplanet/myawsplanet"
 aws ecr-public create-repository \
 --repository-name $myimage \
 --region us-east-1
---image-tag-mutability IMMUTABLE \
---image-scanning-configuration scanOnPush=true
 
+sudo yum install jq
 
 ## Get ECR repository url
 URL=$(aws ecr-public describe-repositories \
@@ -64,14 +73,6 @@ docker tag $myimage:latest $URL
 
 ## PUSH a docker image from a private ECR repository
 docker push $URL
-
-
-# Push image to ECR ( manual )
-#aws configure
-#aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/z9l9d8r7
-#docker build -t mydeveloperplanet/myawsplanet .
-#docker tag mydeveloperplanet/myawsplanet:latest public.ecr.aws/z9l9d8r7/mydeveloperplanet/myawsplanet:latest
-#docker push public.ecr.aws/z9l9d8r7/mydeveloperplanet/myawsplanet:latest
 
 
 ```

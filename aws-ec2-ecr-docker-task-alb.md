@@ -74,5 +74,14 @@ docker tag $myimage:latest $URL
 ## PUSH a docker image from a private ECR repository
 docker push $URL
 
+# katacoda k8s url to validate the image
+https://www.katacoda.com/courses/kubernetes/kubectl-run-containers
+docker pull public.ecr.aws/z9l9d8r7/mydeveloperplanet/myawsplanet:latest
+
+# without ALB
+http://34.203.196.3:8080/
+http://34.203.196.3:8080/name
+
+http://MyAwsAlb-645179025.us-east-1.elb.amazonaws.com:8080/name
 
 ```

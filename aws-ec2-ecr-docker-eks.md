@@ -109,6 +109,9 @@ docker tag eksdemo:0.0.1-SNAPSHOT $URL
 #public.ecr.aws/z9l9d8r7/demo-repo:latest
 docker push $URL
 
+![image](https://user-images.githubusercontent.com/89327844/170220697-9c68b645-fd81-49d1-874d-ebb2cce30dad.png)
+
+
 ## Install eksctl 
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv /tmp/eksctl /usr/local/bin

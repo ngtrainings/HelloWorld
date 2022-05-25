@@ -109,7 +109,7 @@ docker tag eksdemo:0.0.1-SNAPSHOT $URL
 #public.ecr.aws/z9l9d8r7/demo-repo:latest
 docker push $URL
 
-![image](https://user-images.githubusercontent.com/89327844/170220697-9c68b645-fd81-49d1-874d-ebb2cce30dad.png)
+![repo](https://user-images.githubusercontent.com/89327844/170221041-0a64bae4-a912-47a4-ab18-1ef58cba5725.png)
 
 
 ## Install eksctl 
